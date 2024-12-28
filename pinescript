@@ -1,0 +1,8 @@
+//@version=6
+indicator(title="Inside Bar Alert", overlay=true)
+
+is_inside_bar = high <= high[1] and low >= low[1]
+
+barcolor(is_inside_bar ? color.gray : na)
+
+alertcondition(is_inside_bar, title="Inside Bar Detected", message="Inside Bar Detected")
